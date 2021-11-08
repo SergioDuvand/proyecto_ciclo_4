@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import {Route, Link} from 'react-router-dom'
 import './App.css';
+import Compartir_receteta from './compartir_receta';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav className="App-header">
+        <ul>
+          <li>
+            <Link to='/'> Home </Link>
+            <Link to='/login'> Login </Link>
+            <Link to='/servicios'> Servicios </Link>
+            <Link to='/noticias'> Noticias </Link>
+            <Link to='/programadores'> Programadores </Link>
+            <Link to='/compartir_receta'> Comparte tu receta </Link>
+          </li>
+        </ul>
+      </nav>
+     
+        <Route exact path='/compartir_receta'>
+          <Compartir_receteta/>
+        </Route>
+    
     </div>
   );
 }
